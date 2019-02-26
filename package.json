@@ -1,0 +1,22 @@
+{
+  "name": "tfsa-rrsp-calculator",
+  "description": "TFSA vs. RRSP calculator",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Dylan Wang",
+  "contributors": [
+    "Dylan Wang <wxh960302@gmail.com> (https://github.com/renko-mei)"
+  ],
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "selenium-webdriver": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+}
