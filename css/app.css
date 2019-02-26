@@ -1,0 +1,33 @@
+.text-center {
+    text-align: center;
+}
+
+div {
+    text-align: center;
+}
+table, th, td {
+    border-style: double;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+input {
+    width: 60%;
+    align-self: center;
+}
+
+.key-col {
+    width: 50%;
+}
+
+.value-col {
+    width: 25%;
+}
+
