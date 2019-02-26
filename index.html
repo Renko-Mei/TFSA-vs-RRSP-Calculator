@@ -12,33 +12,34 @@
   <div id="app">
     <section class="row">
       <h1 class="text-center">TFSA vs. RRSP Calculator</h1>
+      <h3 class="text-center">Please input the rates in percentage (i.e. 40% over 0.4)</h3>
     </section>
     <section class="row">
       <div class="small-4 columns">
         <p class="text-center">Current Marginal Tax Rate</p>
-        <input v-model="curMarginalTaxRate" type="number" min="1" max="100">
+        <input v-model="curMarginalTaxRate" type="number" min="1" max="100" id="cur-mar-rate">
       </div>
       <div class="small-4 columns">
         <p class="text-center">Average Tax Rate in Retirement</p>
-        <input v-model="avgRetireTaxRate" type="number" min="1" max="100">
+        <input v-model="avgRetireTaxRate" type="number" min="1" max="100" id="avg-tax-rate">
       </div>
       <div class="small-4 columns">
         <p class="text-center">Amount of Deposit</p>
-        <input v-model="deposit" type="number" min="0">
+        <input v-model="deposit" type="number" min="0" id="deposit">
       </div>
     </section>
     <section class="row">
       <div class="small-4 columns">
         <p class="text-center">Years Invested</p>
-        <input v-model="yearsInvested" type="number" min="0" step="1">
+        <input v-model="yearsInvested" type="number" min="0" step="1" id="years-invested">
       </div>
       <div class="small-4 columns">
         <p class="text-center">Return on Investment</p>
-        <input v-model="investmentReturnRate" type="number">
+        <input v-model="investmentReturnRate" type="number" id="invest-return-rate">
       </div>
       <div class="small-4 columns">
         <p class="text-center">Inflation Rate</p>
-        <input v-model="inflationRate" type="number" min="1" max="100">
+        <input v-model="inflationRate" type="number" min="1" max="100" id="inflation-rate">
       </div>
     </section>
     
@@ -57,37 +58,37 @@
         </tr>
         <tr>
           <td>Pre-tax Income</td>
-          <td>${{ deposit }}</td>
-          <td>${{ deposit }}</td>
+          <td id="tfsa-deposit">${{ deposit }}</td>
+          <td id="rrsp-deposit">${{ deposit }}</td>
         </tr>
         <tr>
           <td>Tax</td>
-          <td>${{ incomeTax }}</td>
-          <td>N/A</td>
+          <td id="tfsa-income-tax">${{ incomeTax }}</td>
+          <td id="rrsp-income-tax">N/A</td>
         </tr>
         <tr>
           <td>Net contribution</td>
-          <td>${{ netTFSAContribution }}</td>
-          <td>${{ deposit }}</td>
+          <td id="tfsa-contribution">${{ netTFSAContribution }}</td>
+          <td id="rrsp-contribution">${{ deposit }}</td>
         </tr>
         <tr>
           <td>Real rate of return</td>
-          <td colspan="2">{{ realReturnRate }}%</td>
+          <td colspan="2" id="real-return">{{ realReturnRate }}%</td>
         </tr>
         <tr>
-          <td>Value {{ yearsInvested }} years later @ {{ realReturnRate }}% growth</td>
-          <td>${{ futureTFSAValue }}</td>
-          <td>${{ futureRRSPValue }}</td>
+          <td id="future-value-key">Value {{ yearsInvested }} years later @ {{ realReturnRate }}% growth</td>
+          <td id="tfsa-future-value">${{ futureTFSAValue }}</td>
+          <td id="rrsp-future-value">${{ futureRRSPValue }}</td>
         </tr>
         <tr>
-          <td>Tax upon withdrawal ({{  }}%)</td>
-          <td>N/A</td>
-          <td>${{ taxUponWithdrawRRSP }}</td>
+          <td id="tax-withdraw-key">Tax upon withdrawal ({{ curMarginalTaxRate }}%)</td>
+          <td id="tfsa-tax-withdraw">N/A</td>
+          <td id="rrsp-tax-withdraw">${{ taxUponWithdrawRRSP }}</td>
         </tr>
         <tr>
           <td>Net withdrawal</td>
-          <td>${{ futureTFSAValue }}</td>
-          <td>${{ netWithdrawRRSP }}</td>
+          <td id="tfsa-net-withdraw">${{ futureTFSAValue }}</td>
+          <td id="rrsp-net-withdraw">${{ netWithdrawRRSP }}</td>
         </tr>
       </table>
     </div>
