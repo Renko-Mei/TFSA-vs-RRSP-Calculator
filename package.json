@@ -11,6 +11,8 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
+    "assert": "^1.4.1",
+    "chromedriver": "*",
     "selenium-webdriver": "*"
   },
   "licenses": [
