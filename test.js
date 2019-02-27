@@ -14,8 +14,8 @@ async function fullTest() {
 		await driver.get(__dirname + '/index.html');
 
 		// Input the values
-		sendKey("cur-mar-rate", "30");
-		sendKey("avg-tax-rate", "25");
+		sendKey("cur-mar-rate", "25");
+		sendKey("avg-tax-rate", "30");
 		sendKey("deposit", "1000");
 		sendKey("years-invested", "5");
 		sendKey("invest-return-rate", "5");

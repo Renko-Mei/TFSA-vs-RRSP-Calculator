@@ -1,8 +1,8 @@
 new Vue({
   el: '#app',
   data: {
-    curMarginalTaxRate: null, // This is the highest income tax bracket of the “user”
-    avgRetireTaxRate: null, // Average income tax the “user” pays in retirement
+    avgRetireTaxRate: null, // This is the highest income tax bracket of the “user”
+    curMarginalTaxRate: null, // Average income tax the “user” pays in retirement
     deposit: null, // Amount of money being deposited in the comparison
     yearsInvested: null, // Number of years before this money is withdrawn again
     investmentReturnRate: null, // Rate at which the invested money grows each year
@@ -21,8 +21,8 @@ new Vue({
   },
   computed: {
     incomeTax: function() {
-      if (this.deposit != 0 && this.avgRetireTaxRate != 0) {
-        return (this.deposit * this.avgRetireTaxRate / 100).toFixed(2);
+      if (this.deposit != 0 && this.curMarginalTaxRate != 0) {
+        return (this.deposit * this.curMarginalTaxRate / 100).toFixed(2);
       }
       else { return 0; }
     },
@@ -31,7 +31,7 @@ new Vue({
       return this.incomeTax != 0 ? (this.deposit - this.incomeTax).toFixed(2) : 0;
     },
     realReturnRate: function() {
-      if (this.avgRetireTaxRate == 0 || this.inflationRate == 0) {  
+      if (this.curMarginalTaxRate == 0 || this.inflationRate == 0) {  
         return 0;
       }
       else {
@@ -48,8 +48,8 @@ new Vue({
       return this.futureValue(this.deposit);
     },
     taxUponWithdrawRRSP: function() {
-      return (this.futureRRSPValue != 0 && this.curMarginalTaxRate != 0) ? 
-        Number(this.futureRRSPValue * this.curMarginalTaxRate / 100).toFixed(2) :
+      return (this.futureRRSPValue != 0 && this.avgRetireTaxRate != 0) ? 
+        Number(this.futureRRSPValue * this.avgRetireTaxRate / 100).toFixed(2) :
         0;
     },
     netWithdrawRRSP: function() {
