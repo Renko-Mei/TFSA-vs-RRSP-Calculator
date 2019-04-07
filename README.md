@@ -1,7 +1,7 @@
 # TFSA versus RRSP Calculator
 
 ## Description
-The goal of this test is to create a financial calculator that compares using a TFSA (tax-free savings account) and RRSP (registered retirement savings plan) to save money.
+The goal of this project is to create a financial calculator that compares using a TFSA (tax-free savings account) and RRSP (registered retirement savings plan) to save money.
 
 RRSPs allow Canadians to defer paying taxes until they withdraw money from their account. In practice Canadians get a tax refund on the money they deposited into RSP. A TFSA, on the other hand, allows Canadians to save their after tax money in a way that the future growth (interest earned) remains tax-free forever so all future withdrawals are not taxed.
 
